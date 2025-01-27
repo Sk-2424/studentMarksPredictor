@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
 from src.components import data_transformation
+from src.components import model_trainer
 
 @dataclass
 class DataIngestionConfig:
@@ -63,8 +64,9 @@ if __name__ == '__main__':
     train_path,test_path = obj.ingestion_data()
     data_transformation = data_transformation.DataTransformation()
     processed_train_Data,processed_test_data = data_transformation.transform_object(train_path,test_path)
-    print(processed_train_Data)
-
+    md = model_trainer.ModelTrainer()
+    r2_score=md.model_training(processed_train_Data,processed_test_data)
+    print(r2_score)
 
 
 
