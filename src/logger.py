@@ -18,6 +18,5 @@ logging.basicConfig(
         RotatingFileHandler(LOG_FILE_PATH, maxBytes=5000, backupCount=5)
     ]
 )
-
 if __name__ == '__main__':
     logging.info('hello world')
