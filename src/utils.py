@@ -70,6 +70,18 @@ def train_and_evaluate_model(X_train, y_train,X_test,y_test,models,param):
         raise CustomException(e, sys)
 
     
+def load_object(file_path):
+    try:
+        with open(file_path,'rb') as file :
+            data = pickle.load(file)
+            logging.info('Pkl file loaded successfully')
+            return data
+    except Exception as e:
+        logging.info(CustomException(e,sys))
+        raise CustomException(e,sys)
+
+
+
 
 
 
