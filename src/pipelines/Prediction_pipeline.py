@@ -18,12 +18,12 @@ class Prediction_Pipeline:
             try:
                 model_path=os.path.join("artifacts","model.pkl")
                 preprocessor_path=os.path.join('artifacts','preprocessor.pkl')
-                print("Before Loading")
                 model=load_object(file_path=model_path)
                 preprocessor=load_object(file_path=preprocessor_path)
-                print("After Loading")
+                logging.info('Both Preprocessor and model pickel file loaded successfully')
                 data_scaled=preprocessor.transform(features)
                 preds=model.predict(data_scaled)
+                logging.info(f'Model has predicted the score i.e {preds[0]}')
                 return preds
             except Exception as e:
                 logging.info(CustomException(e,sys))
