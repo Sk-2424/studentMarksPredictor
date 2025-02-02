@@ -7,7 +7,7 @@ from src.utils import save_object,open_json_file,train_and_evaluate_model
 
 from dataclasses import dataclass
 
-from catboost import CatBoostRegressor
+# from catboost import CatBoostRegressor
 from sklearn.ensemble import (
     AdaBoostRegressor,
     GradientBoostingRegressor,
