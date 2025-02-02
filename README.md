@@ -93,6 +93,7 @@ tar xzf ./actions-runner-linux-x64-2.321.0.tar.gz
 ./config.sh --url https://github.com/Sk-2424/studentMarksPredictor --token YOUR_GITHUB_RUNNER_TOKEN
 ```
 - Name the runner as `self-hosted`.
+- ./run.sh
 
 ### 10. Add Secrets in GitHub
 - Go to **GitHub → Settings → Security → Actions**
